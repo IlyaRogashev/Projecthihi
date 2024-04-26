@@ -1,0 +1,48 @@
+{% extends 'base.html'%}
+
+
+{% block title %}
+Ухихихиххихихихихихиха
+{% endblock %}
+
+{% block body %}
+{% block content %}
+<h1>Смешнявки</h1>
+{% if posts %}
+{% for item in posts%}
+<div class="container">
+    <div class="col-md6 ">
+        <h2>{{item.title}}</h2>
+        <div>
+            {% if item.file %}
+
+                <img src="{{item.file}}" height="400">
+            {% endif %}
+        </div>
+        <div>
+            Автор - {{item.user.nickname}}
+        </div>
+        {% if current_user.is_authenticated and current_user == item.user %}
+    <div>
+        <a href="/news/{{ item.id }}" class="btn btn-warning">
+            Изменить, переобуться
+        </a>
+        <a href="/news_delete/{{ item.id }}" class="btn btn-danger">
+            Удалить(с позором)
+        </a>
+    </div>
+{% endif %}
+    </div>
+    <h2>_____________________________________________________________________________</h2>
+</div>
+
+
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+
+{% endfor %}
+{% endif %}
+{% endblock %}
+{% endblock %}

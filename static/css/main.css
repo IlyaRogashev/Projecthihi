@@ -1,0 +1,12 @@
+/* header*/
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-radius: 15px;
+    background-color: black;
+
+}
+body{
+    background-color: sandybrown;
+}
